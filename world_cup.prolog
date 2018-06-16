@@ -149,17 +149,49 @@ result( 2, egy, 0, uru, 1).
 result( 4, mar, 0, irn, 1).
 result( 3, por, 3, esp, 3).
 result( 5, fra, 2, aus, 1).
-%result( 7, arg, 0, isl, 0).
-%result( 6, per, 0, den, 0).
-%result( 8, cro, 0, nga, 0).
+result( 7, arg, 1, isl, 1).
+result( 6, per, 0, den, 1).
+result( 8, cro, 2, nga, 0).
 %result(10, crc, 0, srb, 0).
 %result(11, ger, 0, mex, 0).
 %result( 9, bra, 0, sui, 0).
 %result(12, swe, 0, kor, 0).
 %result(13, bel, 0, pan, 0).
 %result(14, tun, 0, eng, 0).
-%result(17, rus, 0, egy, 1).
-%result(33, uru, 1, rus, 2).
+%result(15, pol, 0, sen, 0).
+%result(17, rus, 0, egy, 0).
+%result(16, col, 0, jpn, 0).
+%result(20, irn, 0, esp, 0).
+%result(19, por, 0, mar, 0).
+%result(18, uru, 0, ksa, 0).
+%result(21, fra, 0, per, 0).
+%result(23, arg, 0, cro, 0).
+%result(22, den, 0, aus, 0).
+%result(26, srb, 0, sui, 0).
+%result(25, bra, 0, crc, 0).
+%result(24, nga, 0, isl, 0).
+%result(29, bel, 0, tun, 0).
+%result(28, kor, 0, mex, 0).
+%result(27, ger, 0, swe, 0).
+%result(32, jpn, 0, sen, 0).
+%result(31, pol, 0, col, 0).
+%result(30, eng, 0, pan, 0).
+%result(36, esp, 0, mar, 0).
+%result(33, uru, 0, rus, 0).
+%result(35, irn, 0, por, 0).
+%result(34, ksa, 0, egy, 0).
+%result(37, den, 0, fra, 0).
+%result(40, isl, 0, cro, 0).
+%result(39, nga, 0, arg, 0).
+%result(38, aus, 0, per, 0).
+%result(44, mex, 0, swe, 0).
+%result(43, kor, 0, ger, 0).
+%result(41, srb, 0, bra, 0).
+%result(42, sui, 0, crc, 0).
+%result(44, eng, 0, bel, 0).
+%result(48, sen, 0, col, 0).
+%result(46, pan, 0, tun, 0).
+%result(47, jpn, 0, pol, 0).
 
 % note this is a different kind of group predicate
 group_rank(R,G,T) :- group_stats(G,L), nth1(R,L,[T|_]).
