@@ -147,7 +147,7 @@ match(44, mex, swe, june, 27, 1900, ekaterinburg).
 match(43, kor, ger, june, 27, 1700, kazan).
 match(41, srb, bra, june, 27, 2100, moscow).
 match(42, sui, crc, june, 27, 2100, novgorod).
-match(44, eng, bel, june, 28, 2000, kaliningrad).
+match(45, eng, bel, june, 28, 2000, kaliningrad).
 match(48, sen, col, june, 28, 1800, samara).
 match(46, pan, tun, june, 28, 2100, saransk).
 match(47, jpn, pol, june, 28, 1700, volgograd).
