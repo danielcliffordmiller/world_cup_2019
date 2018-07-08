@@ -28,25 +28,49 @@ result(24, 2, 0). % nga v isl
 result(29, 5, 2). % bel v tun
 result(28, 1, 2). % kor v mex
 result(27, 2, 1). % ger v swe
-%result(32, 0, 0). % jpn v sen
-%result(31, 0, 0). % pol v col
-%result(30, 0, 0). % eng v pan
-%result(36, 0, 0). % esp v mar
-%result(33, 0, 0). % uru v rus
-%result(35, 0, 0). % irn v por
-%result(34, 0, 0). % ksa v egy
-%result(37, 0, 0). % den v fra
-%result(40, 0, 0). % isl v cro
-%result(39, 0, 0). % nga v arg
-%result(38, 0, 0). % aus v per
-%result(44, 0, 0). % mex v swe
-%result(43, 0, 0). % kor v ger
-%result(41, 0, 0). % srb v bra
-%result(42, 0, 0). % sui v crc
-%result(44, 0, 0). % eng v bel
-%result(48, 0, 0). % sen v col
-%result(46, 0, 0). % pan v tun
-%result(47, 0, 0). % jpn v pol
+result(32, 2, 2). % jpn v sen
+result(31, 0, 3). % pol v col
+result(30, 6, 1). % eng v pan
+result(36, 2, 2). % esp v mar
+result(33, 3, 0). % uru v rus
+result(35, 1, 1). % irn v por
+result(34, 2, 1). % ksa v egy
+result(37, 0, 0). % den v fra
+result(40, 1, 2). % isl v cro
+result(39, 1, 2). % nga v arg
+result(38, 0, 2). % aus v per
+result(44, 0, 3). % mex v swe
+result(43, 2, 0). % kor v ger
+result(41, 0, 2). % srb v bra
+result(42, 2, 2). % sui v crc
+result(45, 0, 1). % eng v bel
+result(48, 0, 1). % sen v col
+result(46, 1, 2). % pan v tun
+result(47, 0, 1). % jpn v pol
+
+% round of 16
+result(49, 2, 1). % uru v por
+result(50, 4, 3). % fra v arg
+result(51, 1, 1, 3, 4). % esp v rus
+result(52, 1, 1, 3, 2). % cro v den
+result(53, 2, 0). % bra v mex
+result(54, 3, 2). % bel v jpn
+result(55, 1, 0). % swe v sui
+result(56, 1, 1, 3, 4). % col v eng
+
+% quarter finals
+result(57, 0, 2). % uru v fra
+result(58, 1, 2). % bra v bel
+result(60, 0, 2). % swe v eng
+result(59, 1, 2). % rus v cro
+
+% semi finqls
+%result(61, 0, 0). % fra v bel
+%result(62, 0, 0). % cro v eng
+
+% finqls
+%result(63, 0, 0). %
+%result(64, 0, 0). %
 
 % timezones for russian locations
 timezone(ekaterinburg,5).
