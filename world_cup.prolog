@@ -157,17 +157,17 @@ match(50, T1, T2, june, 30, 1700, kazan) :-
     group_rank(1,c,T1), group_rank(2,d,T2).
 match(49, T1, T2, june, 30, 2100, sochi) :-
     group_rank(1,a,T1), group_rank(2,b,T2).
-match(51, T1, T2, june, 31, 1700, moscow) :-
+match(51, T1, T2, july,  1, 1700, moscow) :-
     group_rank(1,b,T1), group_rank(2,a,T2).
-match(52, T1, T2, june, 31, 2100, novgorod) :-
+match(52, T1, T2, july,  1, 2100, novgorod) :-
     group_rank(1,d,T1), group_rank(2,c,T2).
-match(54, T1, T2, july,  1, 2100, rostov) :-
+match(54, T1, T2, july,  2, 2100, rostov) :-
     group_rank(1,g,T1), group_rank(2,h,T2).
-match(53, T1, T2, july,  1, 1800, samara) :-
+match(53, T1, T2, july,  2, 1800, samara) :-
     group_rank(1,e,T1), group_rank(2,f,T2).
-match(56, T1, T2, july,  2, 2100, moscow) :-
+match(56, T1, T2, july,  3, 2100, moscow) :-
     group_rank(1,h,T1), group_rank(2,g,T2).
-match(55, T1, T2, july,  2, 1700, stpetersburg) :-
+match(55, T1, T2, july,  3, 1700, stpetersburg) :-
     group_rank(1,f,T1), group_rank(2,e,T2).
 
 % quarter finals
