@@ -198,15 +198,19 @@ group_rank(R,G,T) :- group_stats(G,L), nth1(R,L,[T|_]).
 
 winner(G, T) :- match(G,T,_,_,_,_,_), result(G, Gf, Ga), Gf > Ga.
 winner(G, T) :- match(G,_,T,_,_,_,_), result(G, Ga, Gf), Gf > Ga.
+winner(G, T) :- match(G,T,_,_,_,_,_), result(G, _G, _G, Pf, Pa), Pf > Pa.
+winner(G, T) :- match(G,_,T,_,_,_,_), result(G, _G, _G, Pa, Pf), Pf > Pa.
 loser(G, T) :- match(G,T,_,_,_,_,_), result(G, Gf, Ga), Gf < Ga.
 loser(G, T) :- match(G,_,T,_,_,_,_), result(G, Ga, Gf), Gf < Ga.
+loser(G, T) :- match(G,T,_,_,_,_,_), result(G, _G, _G, Pf, Pa), Pf < Pa.
+loser(G, T) :- match(G,_,T,_,_,_,_), result(G, _G, _G, Pa, Pf), Pf < Pa.
 
 group_match(M) :- M =< 48.
 
 mdt(LocalTime, UTCOffset, Result) :-
     Result is LocalTime - (UTCOffset+5)*100.
 
-schedule(Ms, Ds, Me, De, [N,T1,T2,DoW,M,D,Tm,G]) :-
+schedule(Ms, Ds, Me, De, [N,T1,T2,DoW,M,D,Tm]) :-
     match(N, T1, T2, M, D, Tl, L),
     day_of_week_from_date(M,D,DoW),
     month_to_ord(Ms, NMs),
@@ -214,19 +218,13 @@ schedule(Ms, Ds, Me, De, [N,T1,T2,DoW,M,D,Tm,G]) :-
     month_to_ord(M, NM),
     NMs =< NM, NM =< NMe,
     Ds =< D, D =< De,
-    group(G, _group),
-    member(T1, _group),
-    member(T2, _group),
     timezone(L, U),
     mdt(Tl,U,Tm).
 
-team_schedule(T, [T1,T2,DoW,M,D,Ti,G]) :-
+team_schedule(T, [N,T1,T2,DoW,M,D,Ti]) :-
     member(T, [T1,T2]),
-    match(_, T1, T2, M, D, Tm, L),
+    match(N, T1, T2, M, D, Tm, L),
     day_of_week_from_date(M,D,DoW),
-    group(G, _group),
-    member(T1, _group),
-    member(T2, _group),
     timezone(L, U),
     mdt(Tm,U,Ti).
 
@@ -290,7 +288,7 @@ from_military_time(T, S) :-
     format(atom(S), "~t~d~2+:~|~`0t~d~2+ ~a", [Hnew,M,O]).
 
 % [11, ger, mex, sunday, june, 17, 1000, f]
-write_schedule([N,T1,T2,DoW,M,D,T,G]) :-
+write_schedule([N,T1,T2,DoW,M,D,T]) :-
     from_military_time(T,Ti),
     format("~t~d~2+ ~a v ~a ~|~a~t~10+~a ~a ~a~n",
 	[N,T1,T2,DoW,M,D,Ti]).
@@ -310,15 +308,15 @@ stat_cmp('>',[_,_,_,_,_,Gf1,_,GD,P],[_,_,_,_,_,Gf2,_,GD,P]) :- Gf1<Gf2.
 stat_cmp('<',[_,_,_,_,_,Gf1,_,GD,P],[_,_,_,_,_,Gf2,_,GD,P]) :- Gf1>Gf2.
 stat_cmp('<',[_,_,_,_,_,Gf,_,GD,P],[_,_,_,_,_,Gf,_,GD,P]).
 
-sched_cmp('<',[G1,_,_,_,M,D,T,_],[G2,_,_,_,M,D,T,_]) :- G1<G2.
-sched_cmp('>',[G1,_,_,_,M,D,T,_],[G2,_,_,_,M,D,T,_]) :- G1>G2.
-sched_cmp('<',[_,_,_,_,M,D,Ta,_],[_,_,_,_,M,D,Tb,_]) :- Ta<Tb.
-sched_cmp('>',[_,_,_,_,M,D,Ta,_],[_,_,_,_,M,D,Tb,_]) :- Ta>Tb.
-sched_cmp('<',[_,_,_,_,M,Da,_,_],[_,_,_,_,M,Db,_,_]) :- Da<Db.
-sched_cmp('>',[_,_,_,_,M,Da,_,_],[_,_,_,_,M,Db,_,_]) :- Da>Db.
-sched_cmp('<',[_,_,_,_,Ma,_,_,_],[_,_,_,_,Mb,_,_,_]) :-
+sched_cmp('<',[G1,_,_,_,M,D,T],[G2,_,_,_,M,D,T]) :- G1<G2.
+sched_cmp('>',[G1,_,_,_,M,D,T],[G2,_,_,_,M,D,T]) :- G1>G2.
+sched_cmp('<',[_,_,_,_,M,D,Ta],[_,_,_,_,M,D,Tb]) :- Ta<Tb.
+sched_cmp('>',[_,_,_,_,M,D,Ta],[_,_,_,_,M,D,Tb]) :- Ta>Tb.
+sched_cmp('<',[_,_,_,_,M,Da,_],[_,_,_,_,M,Db,_]) :- Da<Db.
+sched_cmp('>',[_,_,_,_,M,Da,_],[_,_,_,_,M,Db,_]) :- Da>Db.
+sched_cmp('<',[_,_,_,_,Ma,_,_],[_,_,_,_,Mb,_,_]) :-
     month_to_ord(Ma,M1), month_to_ord(Mb,M2), M1<M2.
-sched_cmp('>',[_,_,_,_,Ma,_,_,_],[_,_,_,_,Mb,_,_,_]) :-
+sched_cmp('>',[_,_,_,_,Ma,_,_],[_,_,_,_,Mb,_,_]) :-
     month_to_ord(Ma,M1), month_to_ord(Mb,M2), M1>M2.
 
 vector_add([],[],[]).
