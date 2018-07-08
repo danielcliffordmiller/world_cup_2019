@@ -210,14 +210,19 @@ group_match(M) :- M =< 48.
 mdt(LocalTime, UTCOffset, Result) :-
     Result is LocalTime - (UTCOffset+5)*100.
 
+date_between(Ma,_,Mb,_,Mc,_) :- Ma < Mb, Mb < Mc, !.
+date_between(M,Da,M,Db,Mc,_) :- M < Mc, Da =< Db, !.
+date_between(Ma,_,M,Db,M,Dc) :- Ma < M, Db =< Dc, !.
+date_between(M,Da,M,Db,M,Dc) :- Da =< Db, Db =< Dc, !.
+date_between(M,D,M,D,M,D).
+
 schedule(Ms, Ds, Me, De, [N,T1,T2,DoW,M,D,Tm]) :-
     match(N, T1, T2, M, D, Tl, L),
     day_of_week_from_date(M,D,DoW),
     month_to_ord(Ms, NMs),
     month_to_ord(Me, NMe),
     month_to_ord(M, NM),
-    NMs =< NM, NM =< NMe,
-    Ds =< D, D =< De,
+    date_between(NMs,Ds,NM,D,NMe,De),
     timezone(L, U),
     mdt(Tl,U,Tm).
 
