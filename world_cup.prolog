@@ -62,7 +62,7 @@ result(56, 1, 1, 3, 4). % col v eng
 result(57, 0, 2). % uru v fra
 result(58, 1, 2). % bra v bel
 result(60, 0, 2). % swe v eng
-result(59, 1, 2). % rus v cro
+result(59, 2, 2, 3, 4). % rus v cro
 
 % semi finqls
 %result(61, 0, 0). % fra v bel
