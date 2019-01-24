@@ -64,11 +64,11 @@ result(58, 1, 2). % bra v bel
 result(60, 0, 2). % swe v eng
 result(59, 2, 2, 3, 4). % rus v cro
 
-% semi finqls
+% semi finals
 result(61, 1, 0). % fra v bel
 result(62, 2, 1). % cro v eng
 
-% finqls
+% finals
 result(63, 2, 0). % bel v eng
 result(64, 4, 2). % fra v cro
 
