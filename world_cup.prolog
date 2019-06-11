@@ -1,220 +1,198 @@
 % results
-result( 1, 5, 0). % rus v ksa
-result( 2, 0, 1). % egy v uru
-result( 4, 0, 1). % mar v irn
-result( 3, 3, 3). % por v esp
-result( 5, 2, 1). % fra v aus
-result( 7, 1, 1). % arg v isl
-result( 6, 0, 1). % per v den
-result( 8, 2, 0). % cro v nga
-result(10, 0, 1). % crc v srb
-result(11, 0, 1). % ger v mex
-result( 9, 1, 1). % bra v sui
-result(12, 1, 0). % swe v kor
-result(13, 3, 0). % bel v pan
-result(14, 1, 2). % tun v eng
-result(15, 1, 2). % pol v sen
-result(17, 3, 1). % rus v egy
-result(16, 1, 2). % col v jpn
-result(20, 0, 1). % irn v esp
-result(19, 1, 0). % por v mar
-result(18, 1, 0). % uru v ksa
-result(21, 1, 0). % fra v per
-result(23, 0, 3). % arg v cro
-result(22, 1, 1). % den v aus
-result(26, 1, 2). % srb v sui
-result(25, 2, 0). % bra v crc
-result(24, 2, 0). % nga v isl
-result(29, 5, 2). % bel v tun
-result(28, 1, 2). % kor v mex
-result(27, 2, 1). % ger v swe
-result(32, 2, 2). % jpn v sen
-result(31, 0, 3). % pol v col
-result(30, 6, 1). % eng v pan
-result(36, 2, 2). % esp v mar
-result(33, 3, 0). % uru v rus
-result(35, 1, 1). % irn v por
-result(34, 2, 1). % ksa v egy
-result(37, 0, 0). % den v fra
-result(40, 1, 2). % isl v cro
-result(39, 1, 2). % nga v arg
-result(38, 0, 2). % aus v per
-result(44, 0, 3). % mex v swe
-result(43, 2, 0). % kor v ger
-result(41, 0, 2). % srb v bra
-result(42, 2, 2). % sui v crc
-result(45, 0, 1). % eng v bel
-result(48, 0, 1). % sen v col
-result(46, 1, 2). % pan v tun
-result(47, 0, 1). % jpn v pol
+result( 1, 4, 0). % fra v kor
+result( 4, 3, 1). % esp v rsa
+result( 2, 3, 0). % nor v nga
+result( 3, 1, 0). % ger v chn
+result( 5, 1, 2). % aus v ita
+result( 6, 3, 0). % bra v jam
+result( 7, 2, 1). % eng v sco
+result( 8, 0, 0). % arg v jpn
+result( 9, 1, 0). % can v cmr
+result(10, 0, 1). % nzl v ned
+%result(11, 0, 0). % usa v tha
+%result(12, 0, 0). % chi v swe
+%result(15, 0, 0). % ger v esp
+%result(14, 0, 0). % nga v kor
+%result(13, 0, 0). % fra v nor
+%result(16, 0, 0). % rsa v chn
+%result(17, 0, 0). % aus v bra
+%result(19, 0, 0). % eng v arg
+%result(18, 0, 0). % jam v ita
+%result(20, 0, 0). % jpn v sco
+%result(22, 0, 0). % ned v cmr
+%result(21, 0, 0). % can v nzl
+%result(23, 0, 0). % usa v cli
+%result(24, 0, 0). % swe v tha
+%result(28, 0, 0). % chn v esp
+%result(26, 0, 0). % kor v nor
+%result(25, 0, 0). % nga v fra
+%result(27, 0, 0). % rsa v ger
+%result(30, 0, 0). % ita v bra
+%result(29, 0, 0). % jam v aus
+%result(32, 0, 0). % sco v arg
+%result(31, 0, 0). % jpn v eng
+%result(35, 0, 0). % swe v usa
+%result(33, 0, 0). % ned v can
+%result(36, 0, 0). % tha v chi
+%result(34, 0, 0). % cmr v nzl
 
 % round of 16
-result(49, 2, 1). % uru v por
-result(50, 4, 3). % fra v arg
-result(51, 1, 1, 3, 4). % esp v rus
-result(52, 1, 1, 3, 2). % cro v den
-result(53, 2, 0). % bra v mex
-result(54, 3, 2). % bel v jpn
-result(55, 1, 0). % swe v sui
-result(56, 1, 1, 3, 4). % col v eng
+%result(38, 0, 0).
+%result(37, 0, 0).
+%result(39, 0, 0).
+%result(40, 0, 0).
+%result(41, 0, 0).
+%result(42, 0, 0).
+%result(44, 0, 0).
+%result(43, 0, 0).
 
 % quarter finals
-result(57, 0, 2). % uru v fra
-result(58, 1, 2). % bra v bel
-result(60, 0, 2). % swe v eng
-result(59, 2, 2, 3, 4). % rus v cro
+%result(45, 0, 0).
+%result(46, 0, 0).
+%result(47, 0, 0).
+%result(48, 0, 0).
 
-% semi finals
-result(61, 1, 0). % fra v bel
-result(62, 2, 1). % cro v eng
+%semi finals
+%result(49, 0, 0).
+%result(50, 0, 0).
 
-% finals
-result(63, 2, 0). % bel v eng
-result(64, 4, 2). % fra v cro
+%finals
+%result(51, 0, 0).
+%result(52, 0, 0).
 
-% timezones for russian locations
-timezone(ekaterinburg,5).
-timezone(kaliningrad,2).
-timezone(kazan,3).
-timezone(moscow,3).
-timezone(novgorod,3).
-timezone(rostov,3).
-timezone(stpetersburg,3).
-timezone(samara,4).
-timezone(saransk,3).
-timezone(sochi,3).
-timezone(volgograd,3).
+% timezones for french locations
+timezone(valenciennes, 2).
+timezone(lehavre, 2).
+timezone(reims, 2).
+timezone(paris, 2).
+timezone(rennes, 2).
+timezone(lyon, 2).
+timezone(grenoble, 2).
+timezone(nice, 2).
+timezone(montpellier, 2).
 timezone(minneapolis, -5).
 
 % month_to_ord (for comparison)
 month_to_ord(june, 6).
 month_to_ord(july, 7).
 
-day_of_week_from_date(june, 14, thursday).
-day_of_week_from_date(june, 15, friday).
-day_of_week_from_date(june, 16, saturday).
-day_of_week_from_date(june, 17, sunday).
-day_of_week_from_date(june, 18, monday).
-day_of_week_from_date(june, 19, tuesday).
-day_of_week_from_date(june, 20, wednesday).
-day_of_week_from_date(june, 21, thursday).
-day_of_week_from_date(june, 22, friday).
-day_of_week_from_date(june, 23, saturday).
-day_of_week_from_date(june, 24, sunday).
-day_of_week_from_date(june, 25, monday).
-day_of_week_from_date(june, 26, tuesday).
-day_of_week_from_date(june, 27, wednesday).
-day_of_week_from_date(june, 28, thursday).
-day_of_week_from_date(june, 30, saturday).
-day_of_week_from_date(july,  1, sunday).
-day_of_week_from_date(july,  2, monday).
-day_of_week_from_date(july,  3, tuesday).
-day_of_week_from_date(july,  6, friday).
-day_of_week_from_date(july,  7, saturday).
-day_of_week_from_date(july, 10, tuesday).
-day_of_week_from_date(july, 11, wednesday).
-day_of_week_from_date(july, 14, saturday).
-day_of_week_from_date(july, 15, sunday).
+day_of_week_from_date(june,  7, friday).
+day_of_week_from_date(june,  8, saturday).
+day_of_week_from_date(june,  9, sunday).
+day_of_week_from_date(june, 10, monday).
+day_of_week_from_date(june, 11, tuesday).
+day_of_week_from_date(june, 12, wednesday).
+day_of_week_from_date(june, 13, thursday).
+day_of_week_from_date(june, 14, friday).
+day_of_week_from_date(june, 15, saturday).
+day_of_week_from_date(june, 16, sunday).
+day_of_week_from_date(june, 17, monday).
+day_of_week_from_date(june, 18, tuesday).
+day_of_week_from_date(june, 19, wednesday).
+day_of_week_from_date(june, 20, thursday).
+day_of_week_from_date(june, 21, friday).
+day_of_week_from_date(june, 22, saturday).
+day_of_week_from_date(june, 23, sunday).
+day_of_week_from_date(june, 24, monday).
+day_of_week_from_date(june, 25, tuesday).
+day_of_week_from_date(june, 26, wednesday).
+day_of_week_from_date(june, 27, thursday).
+day_of_week_from_date(june, 28, friday).
+day_of_week_from_date(june, 29, saturday).
+day_of_week_from_date(june, 30, sunday).
+day_of_week_from_date(july,  1, monday).
+day_of_week_from_date(july,  2, tuesday).
+day_of_week_from_date(july,  3, wednesday).
+day_of_week_from_date(july,  4, thursday).
+day_of_week_from_date(july,  5, friday).
+day_of_week_from_date(july,  6, saturday).
+day_of_week_from_date(july,  7, sunday).
 
 % groups
-group(a, [ rus, ksa, egy, uru ]).
-group(b, [ por, esp, mar, irn ]).
-group(c, [ fra, aus, per, den ]).
-group(d, [ arg, isl, cro, nga ]).
-group(e, [ bra, sui, crc, srb ]).
-group(f, [ ger, mex, swe, kor ]).
-group(g, [ bel, pan, tun, eng ]).
-group(h, [ pol, sen, col, jpn ]).
+group(a, [ fra, nor, nga, kor ]).
+group(b, [ esp, ger, chn, rsa ]).
+group(c, [ bra, ita, aus, jam ]).
+group(d, [ eng, arg, jpn, sco ]).
+group(e, [ can, ned, nzl, cmr ]).
+group(f, [ usa, tha, chi, swe ]).
 
 % matches ( group only)
-match( 1, rus, ksa, june, 14, 1800, moscow).
-match( 2, egy, uru, june, 15, 1700, ekaterinburg).
-match( 4, mar, irn, june, 15, 1800, stpetersburg).
-match( 3, por, esp, june, 15, 2100, sochi).
-match( 8, cro, nga, june, 16, 2100, kaliningrad).
-match( 5, fra, aus, june, 16, 1300, kazan).
-match( 7, arg, isl, june, 16, 1600, moscow).
-match( 6, per, den, june, 16, 1900, saransk).
-match(11, ger, mex, june, 17, 1800, moscow).
-match( 9, bra, sui, june, 17, 2100, rostov).
-match(10, crc, srb, june, 17, 1600, samara).
-match(12, swe, kor, june, 18, 1500, novgorod).
-match(13, bel, pan, june, 18, 1800, sochi).
-match(14, tun, eng, june, 18, 2100, volgograd).
-match(15, pol, sen, june, 19, 1800, moscow).
-match(17, rus, egy, june, 19, 2100, stpetersburg).
-match(16, col, jpn, june, 19, 1500, saransk).
-match(20, irn, esp, june, 20, 2100, kazan).
-match(19, por, mar, june, 20, 1500, moscow).
-match(18, uru, ksa, june, 20, 1800, rostov).
-match(21, fra, per, june, 21, 2000, ekaterinburg).
-match(23, arg, cro, june, 21, 2100, novgorod).
-match(22, den, aus, june, 21, 1600, samara).
-match(26, srb, sui, june, 22, 2000, kaliningrad).
-match(25, bra, crc, june, 22, 1500, stpetersburg).
-match(24, nga, isl, june, 22, 1800, volgograd).
-match(29, bel, tun, june, 23, 1500, moscow).
-match(28, kor, mex, june, 23, 1800, rostov).
-match(27, ger, swe, june, 23, 2100, sochi).
-match(32, jpn, sen, june, 24, 2000, ekaterinburg).
-match(31, pol, col, june, 24, 2100, kazan).
-match(30, eng, pan, june, 24, 1500, novgorod).
-match(36, esp, mar, june, 25, 2000, kaliningrad).
-match(33, uru, rus, june, 25, 1800, samara).
-match(35, irn, por, june, 25, 2100, saransk).
-match(34, ksa, egy, june, 25, 1700, sochi).
-match(37, den, fra, june, 26, 1700, moscow).
-match(40, isl, cro, june, 26, 2100, rostov).
-match(39, nga, arg, june, 26, 2100, stpetersburg).
-match(38, aus, per, june, 26, 1700, sochi).
-match(44, mex, swe, june, 27, 1900, ekaterinburg).
-match(43, kor, ger, june, 27, 1700, kazan).
-match(41, srb, bra, june, 27, 2100, moscow).
-match(42, sui, crc, june, 27, 2100, novgorod).
-match(45, eng, bel, june, 28, 2000, kaliningrad).
-match(48, sen, col, june, 28, 1800, samara).
-match(46, pan, tun, june, 28, 2100, saransk).
-match(47, jpn, pol, june, 28, 1700, volgograd).
+match( 1, fra, kor, june,  7, 2100, paris).
+match( 4, esp, rsa, june,  8, 1800, lehavre).
+match( 2, nor, nga, june,  8, 2100, reims).
+match( 3, ger, chn, june,  8, 1500, rennes).
+match( 5, aus, ita, june,  9, 1300, valenciennes).
+match( 6, bra, jam, june,  9, 1530, grenoble).
+match( 7, eng, sco, june,  9, 1800, nice).
+match( 8, arg, jpn, june, 10, 1800, paris).
+match( 9, can, cmr, june, 10, 2100, montpellier).
+match(10, nzl, ned, june, 11, 1500, lehavre).
+match(11, usa, tha, june, 11, 2100, reims).
+match(12, chi, swe, june, 11, 1800, rennes).
+match(15, ger, esp, june, 12, 1800, valenciennes).
+match(14, nga, kor, june, 12, 1500, grenoble).
+match(13, fra, nor, june, 12, 2100, nice).
+match(16, rsa, chn, june, 13, 2100, paris).
+match(17, aus, bra, june, 13, 1800, montpellier).
+match(19, eng, arg, june, 14, 2100, lehavre).
+match(18, jam, ita, june, 14, 1800, reims).
+match(20, jpn, sco, june, 14, 1500, rennes).
+match(22, ned, cmr, june, 15, 1500, valenciennes).
+match(21, can, nzl, june, 15, 2100, grenoble).
+match(23, usa, cli, june, 16, 1800, paris).
+match(24, swe, tha, june, 16, 1500, nice).
+match(28, chn, esp, june, 17, 1800, lehavre).
+match(26, kor, nor, june, 17, 2100, reims).
+match(25, nga, fra, june, 17, 2100, rennes).
+match(27, rsa, ger, june, 17, 1800, montpellier).
+match(30, ita, bra, june, 18, 2100, valenciennes).
+match(29, jam, aus, june, 18, 2100, grenoble).
+match(32, sco, arg, june, 19, 2100, paris).
+match(31, jpn, eng, june, 19, 2100, nice).
+match(35, swe, usa, june, 20, 2100, lehavre).
+match(33, ned, can, june, 20, 1800, reims).
+match(36, tha, chi, june, 20, 2100, rennes).
+match(34, cmr, nzl, june, 20, 1800, montpellier).
     
 % RO16 matches
-match(50, T1, T2, june, 30, 1700, kazan) :-
-    group_rank(1,c,T1), group_rank(2,d,T2).
-match(49, T1, T2, june, 30, 2100, sochi) :-
-    group_rank(1,a,T1), group_rank(2,b,T2).
-match(51, T1, T2, july,  1, 1700, moscow) :-
-    group_rank(1,b,T1), group_rank(2,a,T2).
-match(52, T1, T2, july,  1, 2100, novgorod) :-
-    group_rank(1,d,T1), group_rank(2,c,T2).
-match(54, T1, T2, july,  2, 2100, rostov) :-
-    group_rank(1,g,T1), group_rank(2,h,T2).
-match(53, T1, T2, july,  2, 1800, samara) :-
-    group_rank(1,e,T1), group_rank(2,f,T2).
-match(56, T1, T2, july,  3, 2100, moscow) :-
-    group_rank(1,h,T1), group_rank(2,g,T2).
-match(55, T1, T2, july,  3, 1700, stpetersburg) :-
-    group_rank(1,f,T1), group_rank(2,e,T2).
-
-% quarter finals
-match(58, T1, T2, july,  6, 2100, kazan) :-
-    winner(53,T1), winner(54,T2).
-match(57, T1, T2, july,  6, 1700, novgorod) :-
-    winner(49,T1), winner(50,T2).
-match(60, T1, T2, july,  7, 1800, samara) :-
-    winner(55,T1), winner(56,T2).
-match(59, T1, T2, july,  7, 2100, sochi) :-
-    winner(51,T1), winner(52,T2).
-
-%semi finals
-match(61, T1, T2, july, 10, 2100, stpetersburg) :-
-    winner(57,T1), winner(58,T2).
-match(62, T1, T2, july, 11, 2100, moscow) :-
-    winner(59,T1), winner(60,T2).
-
-%finals
-match(63, T1, T2, july, 14, 1700, stpetersburg) :-
-    loser(61,T1), loser(62,T2).
-match(64, T1, T2, july, 15, 1800, moscow) :-
-    winner(61,T1), winner(62,T2).
+%match(38, T1, T2, june, 22, 1730, grenoble) :-
+%    group_rank(1,b,T1), group_rank(2,d,T2). % 1B v 3ACD
+%match(37, T1, T2, june, 22, 2100, nice) :-
+%    group_rank(2,a,T1), group_rank(2,c,T2).
+%match(39, T1, T2, june, 23, 1730, valenciennes) :-
+%    group_rank(1,d,T1), group_rank(2,a,T2). % 1D v 3BEF
+%match(40, T1, T2, june, 23, 2100, lehavre) :-
+%    group_rank(1,a,T1), group_rank(2,c,T2). % 1A v 3CDE
+%match(41, T1, T2, june, 24, 1800, reims) :-
+%    group_rank(2,b,T1), group_rank(1,f,T2). 
+%match(42, T1, T2, june, 24, 2100, paris) :-
+%    group_rank(2,f,T1), group_rank(2,e,T2).
+%match(44, T1, T2, june, 25, 2100, rennes) :-
+%    group_rank(1,e,T1), group_rank(2,d,T2).
+%match(43, T1, T2, june, 25, 1800, montpellier) :-
+%    group_rank(1,f,T1), group_rank(2,e,T2). % 1C v 3ABF
+%
+%% quarter finals
+%match(45, T1, T2, june, 27, 2100, lehavre) :-
+%    winner(37,T1), winner(39,T2).
+%match(46, T1, T2, june, 28, 2100, paris) :-
+%    winner(40,T1), winner(41,T2).
+%match(47, T1, T2, june, 29, 1500, valenciennes) :-
+%    winner(43,T1), winner(44,T2).
+%match(48, T1, T2, june, 29, 1830, rennes) :-
+%    winner(38,T1), winner(42,T2).
+%
+%%semi finals
+%match(49, T1, T2, july,  2, 2100, lyon) :-
+%    winner(45,T1), winner(46,T2).
+%match(50, T1, T2, july,  3, 2100, lyon) :-
+%    winner(47,T1), winner(48,T2).
+%
+%%finals
+%match(51, T1, T2, july,  6, 1700, nice) :-
+%    loser(49,T1), loser(50,T2).
+%match(52, T1, T2, july,  7, 1700, lyon) :-
+%    winner(49,T1), winner(50,T2).
     
 
 % note this is a different kind of group predicate
@@ -229,7 +207,7 @@ loser(G, T) :- match(G,_,T,_,_,_,_), result(G, Ga, Gf), Gf < Ga.
 loser(G, T) :- match(G,T,_,_,_,_,_), result(G, _G, _G, Pf, Pa), Pf < Pa.
 loser(G, T) :- match(G,_,T,_,_,_,_), result(G, _G, _G, Pa, Pf), Pf < Pa.
 
-group_match(M) :- M =< 48.
+group_match(M) :- M =< 34.
 
 mdt(LocalTime, UTCOffset, Result) :-
     Result is LocalTime - (UTCOffset+5)*100.

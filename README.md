@@ -1,3 +1,3 @@
-# world_cup_2018
+# world_cup_2019
 
 requires swi-prolog
