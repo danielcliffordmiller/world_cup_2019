@@ -277,10 +277,12 @@ group_stats(G,S) :-
     merge_group_stats(Rs, A, Sn),
     predsort(stat_cmp, Sn, S), !.
 
-format_group_stat([T,_,_,_,_,_,_,_,P]) :-
-    format("~a~t~d~8|~n",[T,P]).
+format_group_stat(S) :-
+    format("~t~a~6|~t~d~6+~t~d~4+~t~d~4+~t~d~4+~t~d~4+~t~d~4+~t~d~4+~t~d~4+~n", S).
 
 write_group_stats(G) :-
+    format("~t~s~6|~t~s~6+~t~s~4+~t~s~4+~t~s~4+~t~s~4+~t~s~4+~t~s~4+~t~s~4+~n",
+           ["Team", "Pld", "W", "D", "L", "GF", "GA", "GD", "Pts"]),
     group_stats(G, S),
     maplist(format_group_stat, S).
 
