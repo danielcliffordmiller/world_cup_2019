@@ -9,10 +9,10 @@ result( 7, 2, 1). % eng v sco
 result( 8, 0, 0). % arg v jpn
 result( 9, 1, 0). % can v cmr
 result(10, 0, 1). % nzl v ned
-%result(11, 0, 0). % usa v tha
-%result(12, 0, 0). % chi v swe
-%result(15, 0, 0). % ger v esp
-%result(14, 0, 0). % nga v kor
+result(11, 13, 0). % usa v tha
+result(12, 0, 2). % chi v swe
+result(15, 1, 0). % ger v esp
+result(14, 2, 0). % nga v kor
 %result(13, 0, 0). % fra v nor
 %result(16, 0, 0). % rsa v chn
 %result(17, 0, 0). % aus v bra
