@@ -13,15 +13,15 @@ result(11, 13, 0). % usa v tha
 result(12, 0, 2). % chi v swe
 result(15, 1, 0). % ger v esp
 result(14, 2, 0). % nga v kor
-%result(13, 0, 0). % fra v nor
+result(13, 2, 1). % fra v nor
 %result(16, 0, 0). % rsa v chn
-%result(17, 0, 0). % aus v bra
+result(17, 3, 2). % aus v bra
 %result(19, 0, 0). % eng v arg
 %result(18, 0, 0). % jam v ita
 %result(20, 0, 0). % jpn v sco
 %result(22, 0, 0). % ned v cmr
 %result(21, 0, 0). % can v nzl
-%result(23, 0, 0). % usa v cli
+%result(23, 0, 0). % usa v chi
 %result(24, 0, 0). % swe v tha
 %result(28, 0, 0). % chn v esp
 %result(26, 0, 0). % kor v nor
@@ -59,6 +59,9 @@ result(14, 2, 0). % nga v kor
 %finals
 %result(51, 0, 0).
 %result(52, 0, 0).
+
+result(_,_,_)     :- false.
+result(_,_,_,_,_) :- false.
 
 % timezones for french locations
 timezone(valenciennes, 2).
