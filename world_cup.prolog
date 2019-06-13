@@ -119,6 +119,8 @@ group(d, [ eng, arg, jpn, sco ]).
 group(e, [ can, ned, nzl, cmr ]).
 group(f, [ usa, tha, chi, swe ]).
 
+group_of(T, G) :- group(G, Ts), member(T, Ts), !.
+
 % matches ( group only)
 match( 1, fra, kor, june,  7, 2100, paris).
 match( 4, esp, rsa, june,  8, 1800, lehavre).
@@ -289,10 +291,10 @@ write_group_stats(G) :-
     group_stats(G, S),
     maplist(format_group_stat, S).
 
-from_military_hour(0, 12, am).
-from_military_hour(12, 12, pm).
-from_military_hour(H, R, pm) :- H > 12, R is H-12.
-from_military_hour(H, H, am) :- H < 12, H > 0.
+from_military_hour(0, 12, am) :- !.
+from_military_hour(12, 12, pm) :- !.
+from_military_hour(H, R, pm) :- H > 12, R is H-12, !.
+from_military_hour(H, H, am) :- H < 12, H > 0, !.
 from_military_time(T, S) :-
     H is T//100,
     M is T-H*100,
@@ -300,7 +302,7 @@ from_military_time(T, S) :-
     format(atom(S), "~t~d~2+:~|~`0t~d~2+ ~a", [Hnew,M,O]).
 
 % [11, ger, mex, sunday, june, 17, 1000, f]
-write_schedule([N,T1,T2,DoW,M,D,T]) :-
+format_schedule([N,T1,T2,DoW,M,D,T]) :-
     from_military_time(T,Ti),
     format("~t~d~2+ ~a v ~a ~|~a~t~10+~a ~a ~a~n",
         [N,T1,T2,DoW,M,D,Ti]).
@@ -308,28 +310,25 @@ write_schedule([N,T1,T2,DoW,M,D,T]) :-
 write_schedules(Ma,Da,Mb,Db) :-
     findall(R, schedule(Ma,Da,Mb,Db,R), Rs),
     predsort(sched_cmp, Rs, ToWrite),
-    maplist(write_schedule, ToWrite), !.
+    maplist(format_schedule, ToWrite), !.
 write_schedules(M, D) :- write_schedules(M, D, M, D).
 
+write_team_schedules(T) :-
+    findall(S, team_schedule(T, S), Ss),
+    predsort(sched_cmp, Ss, ToWrite),
+    maplist(format_schedule, ToWrite), !.
+
 % signs are such that leader is first in list
-stat_cmp('>',[_,_,_,_,_,_,_,_,P1],[_,_,_,_,_,_,_,_,P2]) :- P1<P2.
-stat_cmp('<',[_,_,_,_,_,_,_,_,P1],[_,_,_,_,_,_,_,_,P2]) :- P1>P2.
-stat_cmp('>',[_,_,_,_,_,_,_,GD1,P],[_,_,_,_,_,_,_,GD2,P]) :- GD1<GD2.
-stat_cmp('<',[_,_,_,_,_,_,_,GD1,P],[_,_,_,_,_,_,_,GD2,P]) :- GD1>GD2.
-stat_cmp('>',[_,_,_,_,_,Gf1,_,GD,P],[_,_,_,_,_,Gf2,_,GD,P]) :- Gf1<Gf2.
-stat_cmp('<',[_,_,_,_,_,Gf1,_,GD,P],[_,_,_,_,_,Gf2,_,GD,P]) :- Gf1>Gf2.
+stat_cmp(R,[_,_,_,_,_,_,_,_,P1],[_,_,_,_,_,_,_,_,P2]) :- P1 \= P2, compare(R,P2,P1), !.
+stat_cmp(R,[_,_,_,_,_,_,_,GD1,P],[_,_,_,_,_,_,_,GD2,P]) :- GD1 \= GD2, compare(R,GD2,GD1), !.
+stat_cmp(R,[_,_,_,_,_,Gf1,_,GD,P],[_,_,_,_,_,Gf2,_,GD,P]) :- Gf1 \= Gf2, compare(R,Gf2,Gf1), !.
 stat_cmp('<',[_,_,_,_,_,Gf,_,GD,P],[_,_,_,_,_,Gf,_,GD,P]).
 
-sched_cmp('<',[G1,_,_,_,M,D,T],[G2,_,_,_,M,D,T]) :- G1<G2.
-sched_cmp('>',[G1,_,_,_,M,D,T],[G2,_,_,_,M,D,T]) :- G1>G2.
-sched_cmp('<',[_,_,_,_,M,D,Ta],[_,_,_,_,M,D,Tb]) :- Ta<Tb.
-sched_cmp('>',[_,_,_,_,M,D,Ta],[_,_,_,_,M,D,Tb]) :- Ta>Tb.
-sched_cmp('<',[_,_,_,_,M,Da,_],[_,_,_,_,M,Db,_]) :- Da<Db.
-sched_cmp('>',[_,_,_,_,M,Da,_],[_,_,_,_,M,Db,_]) :- Da>Db.
-sched_cmp('<',[_,_,_,_,Ma,_,_],[_,_,_,_,Mb,_,_]) :-
-    month_to_ord(Ma,M1), month_to_ord(Mb,M2), M1<M2.
-sched_cmp('>',[_,_,_,_,Ma,_,_],[_,_,_,_,Mb,_,_]) :-
-    month_to_ord(Ma,M1), month_to_ord(Mb,M2), M1>M2.
+sched_cmp(R,[G1,_,_,_,M,D,T],[G2,_,_,_,M,D,T]) :- compare(R,G1,G2), !.
+sched_cmp(R,[_,_,_,_,M,D,Ta],[_,_,_,_,M,D,Tb]) :- Ta \= Tb, compare(R,Ta,Tb), !.
+sched_cmp(R,[_,_,_,_,M,Da,_],[_,_,_,_,M,Db,_]) :- Da \= Db, compare(R,Da,Db), !.
+sched_cmp(R,[_,_,_,_,Ma,_,_],[_,_,_,_,Mb,_,_]) :- Ma \= Mb,
+    month_to_ord(Ma,M1), month_to_ord(Mb,M2), compare(R,M1,M2), !.
 
 vector_add([],[],[]).
 vector_add([H1|T1],[H2|T2],[HR|TR]) :-
@@ -337,23 +336,23 @@ vector_add([H1|T1],[H2|T2],[HR|TR]) :-
     HR is H1 + H2,
     vector_add(T1,T2,TR).
 
-group_of(T, G) :- group(G, Ts), member(T, Ts), !.
+third_placed_qualifier(Gi, T) :-
+    findall(G, group(G, _), Gs),
+    maplist(group_stats, Gs, Ss),
+    maplist(nth1(3), Ss, S),
+    predsort(stat_cmp, S, R),
+    append(F, _, R), length(F, 4),
+    maplist(nth1(1), F, Ts),
+    maplist(group_of, Ts, G4),
+    sort(G4, G4s),
+    third_placed_qualifier(G4s, Gi, T), !.
 
-third_placed_qualifier(Gi, T) :- findall(G, group(G, _), Gs),
-                                maplist(group_stats, Gs, Ss),
-                                maplist(nth1(3), Ss, S),
-                                predsort(stat_cmp, S, R),
-                                append(F, _, R), length(F, 4),
-                                maplist(nth1(1), F, Ts),
-                                maplist(group_of, Ts, G4),
-                                sort(G4, G4s),
-                                third_placed_qualifier(G4s, Gi, T), !.
-
-third_placed_qualifier(Gs, Gq, T) :- third_placed_qualifier_data(Gs, Gqs),
-                                     member(Gq, Gqs),
-                                     nth1(N, Gqs, Gq),
-                                     nth1(N, Gs, G),
-                                     group_rank(3, G, T), !.
+third_placed_qualifier(Gs, Gq, T) :-
+    third_placed_qualifier_data(Gs, Gqs),
+    member(Gq, Gqs),
+    nth1(N, Gqs, Gq),
+    nth1(N, Gs, G),
+    group_rank(3, G, T), !.
 
 third_placed_qualifier_data([a,b,c,d], [abf, bef, cde, acd]).
 third_placed_qualifier_data([a,b,c,e], [acd, abf, cde, bef]).
