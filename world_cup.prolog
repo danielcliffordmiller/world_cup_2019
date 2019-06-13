@@ -142,7 +142,7 @@ match(18, jam, ita, june, 14, 1800, reims).
 match(20, jpn, sco, june, 14, 1500, rennes).
 match(22, ned, cmr, june, 15, 1500, valenciennes).
 match(21, can, nzl, june, 15, 2100, grenoble).
-match(23, usa, cli, june, 16, 1800, paris).
+match(23, usa, chi, june, 16, 1800, paris).
 match(24, swe, tha, june, 16, 1500, nice).
 match(28, chn, esp, june, 17, 1800, lehavre).
 match(26, kor, nor, june, 17, 2100, reims).
@@ -173,7 +173,7 @@ match(42, T1, T2, june, 24, 2100, paris) :-
 match(44, T1, T2, june, 25, 2100, rennes) :-
     group_rank(1,e,T1), group_rank(2,d,T2).
 match(43, T1, T2, june, 25, 1800, montpellier) :-
-    group_rank(1,f,T1), third_placed_qualifier(abf, T2).
+    group_rank(1,c,T1), third_placed_qualifier(abf, T2).
 
 % quarter finals
 match(45, T1, T2, june, 27, 2100, lehavre) :-
