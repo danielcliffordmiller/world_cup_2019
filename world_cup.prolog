@@ -29,22 +29,22 @@ result(25, 0, 1). % nga v fra
 result(27, 0, 4). % rsa v ger
 result(30, 0, 1). % ita v bra
 result(29, 1, 4). % jam v aus
-%result(32, 0, 0). % sco v arg
-%result(31, 0, 0). % jpn v eng
-%result(35, 0, 0). % swe v usa
-%result(33, 0, 0). % ned v can
-%result(36, 0, 0). % tha v chi
-%result(34, 0, 0). % cmr v nzl
+result(32, 3, 3). % sco v arg
+result(31, 0, 2). % jpn v eng
+result(35, 0, 2). % swe v usa
+result(33, 2, 1). % ned v can
+result(36, 0, 2). % tha v chi
+result(34, 2, 1). % cmr v nzl
 
 % round of 16
-%result(38, 0, 0).
-%result(37, 0, 0).
-%result(39, 0, 0).
-%result(40, 0, 0).
-%result(41, 0, 0).
-%result(42, 0, 0).
-%result(44, 0, 0).
-%result(43, 0, 0).
+result(38, 3, 0). % ger v nga
+result(37, 1, 1, 4, 1). % nor v aus
+result(39, 3, 0). % eng v cmr
+result(40, 2, 1). % fra v bra
+%result(41, 0, 0). % esp v usa
+%result(42, 0, 0). % swe v can
+%result(44, 0, 0). % ned v jpn
+%result(43, 0, 0). % ita v chn
 
 % quarter finals
 %result(45, 0, 0).
@@ -212,7 +212,7 @@ loser(G, T) :- match(G,_,T,_,_,_,_), result(G, Ga, Gf), Gf < Ga.
 loser(G, T) :- match(G,T,_,_,_,_,_), result(G, _G, _G, Pf, Pa), Pf < Pa.
 loser(G, T) :- match(G,_,T,_,_,_,_), result(G, _G, _G, Pa, Pf), Pf < Pa.
 
-group_match(M) :- M =< 34.
+group_match(M) :- M =< 36.
 
 mdt(LocalTime, UTCOffset, Result) :-
     Result is LocalTime - (UTCOffset+5)*100.
