@@ -41,20 +41,20 @@ result(38, 3, 0). % ger v nga
 result(37, 1, 1, 4, 1). % nor v aus
 result(39, 3, 0). % eng v cmr
 result(40, 2, 1). % fra v bra
-%result(41, 0, 0). % esp v usa
-%result(42, 0, 0). % swe v can
-%result(44, 0, 0). % ned v jpn
-%result(43, 0, 0). % ita v chn
+result(41, 1, 2). % esp v usa
+result(42, 1, 0). % swe v can
+result(44, 2, 1). % ned v jpn
+result(43, 2, 0). % ita v chn
 
 % quarter finals
-%result(45, 0, 0).
-%result(46, 0, 0).
-%result(47, 0, 0).
-%result(48, 0, 0).
+result(45, 0, 3). % nor v eng
+result(46, 1, 2). % fra v usa
+result(47, 0, 2). % ita v ned
+result(48, 1, 2). % ger v swe
 
 %semi finals
-%result(49, 0, 0).
-%result(50, 0, 0).
+%result(49, 0, 0). % eng v usa
+%result(50, 0, 0). % ned v swe
 
 %finals
 %result(51, 0, 0).
