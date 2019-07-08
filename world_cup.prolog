@@ -53,12 +53,12 @@ result(47, 0, 2). % ita v ned
 result(48, 1, 2). % ger v swe
 
 %semi finals
-%result(49, 0, 0). % eng v usa
-%result(50, 0, 0). % ned v swe
+result(49, 1, 2). % eng v usa
+result(50, 1, 0). % ned v swe
 
 %finals
-%result(51, 0, 0).
-%result(52, 0, 0).
+result(51, 1, 2). % eng v swe
+result(52, 2, 0). % usa v ned
 
 result(_,_,_)     :- false.
 result(_,_,_,_,_) :- false.
